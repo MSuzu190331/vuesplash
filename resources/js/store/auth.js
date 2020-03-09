@@ -3,7 +3,11 @@ const state = {
   user: null
 }
 
-const getters = {}
+const getters = {
+  // check はログインチェックに使用します。確実に真偽値を返すために二重否定しています。
+  check: state => !! state.user,
+  username: state => state.user ? state.user.name : ''
+}
 
 //mutationsは同期通信で使用
 const mutations = {
@@ -26,6 +30,11 @@ const actions = {
   async logout(context) {
     const response = await axios.post('/api/logout')
     context.commit('setUser', null)
+  },
+  async currentUser (context) {
+    const response = await axios.get('/api/user')
+    const user = response.data || null
+    context.commit('setUser', user)
   }
 }
 
