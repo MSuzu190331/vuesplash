@@ -11,6 +11,15 @@ class User extends Authenticatable
     use Notifiable;
 
     /**
+     * リレーションシップ - photosテーブル
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function photos()
+    {
+        return $this->hasMany('App\Photo');
+    }
+    
+    /**
      * The attributes that are mass assignable.
      *
      * @var array

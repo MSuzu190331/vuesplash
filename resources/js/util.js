@@ -1,9 +1,15 @@
+export const OK = 200
+export const CREATED = 201
+export const INTERNAL_SERVER_ERROR = 500
+export const UNPROCESSABLE_ENTITY = 422
+
 /**
  * 
  * @param {String} searchKey
  * @returns {String}
  */
 export function getCookieValue (searchKey) {
+
   if (typeof searchKey === 'undefined') {
     return ''
   }
