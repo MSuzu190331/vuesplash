@@ -24,6 +24,15 @@ class Photo extends Model
     }
 
     /**
+     * リレーションシップ - commentsテーブル
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comments()
+    {
+        return $this->hasMany('App\Comment')->orderBy('id', 'desc');
+    }
+
+    /**
      * ランダムなID値をid属性に代入する
      */
     private function setId()
@@ -86,7 +95,7 @@ class Photo extends Model
 
     /** JSONに含める属性 */
     protected $visible = [
-        'id', 'owner', 'url',
+        'id', 'owner', 'url', 'comments',
     ];
 
     protected $perPage = 6;
