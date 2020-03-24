@@ -21031,7 +21031,7 @@ function getCookieValue(searchKey) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/html/vuesplash/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/suzukimarina/Documents/vuesplash/web/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })
