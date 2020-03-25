@@ -7,6 +7,7 @@ import PhotoList from './pages/PhotoList.vue'
 import Login from './pages/Login.vue'
 import store from './store' 
 import PhotoDetail from './pages/PhotoDetail.vue'
+import NotFound from './pages/errors/NotFound.vue'
 
 // VueRouterプラグインを使用する
 // これによって<RouterView />コンポーネントなどを使うことができる
@@ -21,6 +22,10 @@ const routes = [
       const page = route.query.page
       return { page: /^[1-9][0-9]*$/.test(page) ? page * 1 : 1 }
     }
+  },
+  {
+    path: '*',
+    component: NotFound
   },
   {
     path: '/photos/:id',
